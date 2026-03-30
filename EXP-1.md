@@ -44,9 +44,72 @@ x(n)=a^n sin⁡(ωn)
 6.	Stop the program
 
 # MATLAB CODE:
+% GENERATION OF STANDARD DISCRETE-TIME SIGNALS
 
+clc;
+clear;
+close all;
+
+%% Sample index
+n = -10:10;
+
+%% 1. Unit Impulse Signal
+x1 = (n == 0);
+figure;
+stem(n, x1, 'filled');
+title('Unit Impulse Signal');
+xlabel('n'); ylabel('Amplitude');
+grid on;
+
+%% 2. Unit Step Signal
+x2 = (n >= 0);
+figure;
+stem(n, x2, 'filled');
+title('Unit Step Signal');
+xlabel('n'); ylabel('Amplitude');
+grid on;
+
+%% 3. Ramp Signal
+n1 = 0:10;
+x3 = n1;
+figure;
+stem(n1, x3, 'filled');
+title('Ramp Signal');
+xlabel('n'); ylabel('Amplitude');
+grid on;
+
+%% 4. Exponential Signal
+a = 0.8;
+x4 = a.^n1;
+figure;
+stem(n1, x4, 'filled');
+title('Exponential Signal');
+xlabel('n'); ylabel('Amplitude');
+grid on;
+
+%% 5. Sinusoidal Signal
+x5 = sin(0.3*pi*n1);
+figure;
+stem(n1, x5, 'filled');
+title('Sinusoidal Signal');
+xlabel('n'); ylabel('Amplitude');
+grid on;
+
+%% 6. Damped Sinusoidal Signal
+x6 = (0.9.^n1).*sin(0.4*pi*n1);
+figure;
+stem(n1, x6, 'filled');
+title('Damped Sinusoidal Signal');
+xlabel('n'); ylabel('Amplitude');
+grid on;
 
 # OUTPUT GRAPH:
+<img width="736" height="566" alt="image" src="https://github.com/user-attachments/assets/66b67a56-4bc0-4bdb-858b-d8cf511b0d02" />
+<img width="737" height="569" alt="image" src="https://github.com/user-attachments/assets/987192eb-dc1e-4bbe-a04d-99a51ffe9af6" />
+<img width="719" height="566" alt="image" src="https://github.com/user-attachments/assets/97fb5014-2993-4c08-953e-5d1056caadea" />
+<img width="724" height="560" alt="image" src="https://github.com/user-attachments/assets/57bfa3ba-5c39-4427-92f4-7c8c14451360" />
+<img width="732" height="548" alt="image" src="https://github.com/user-attachments/assets/791df0f7-7abf-42b3-8623-61bed8272173" />
+<img width="757" height="554" alt="image" src="https://github.com/user-attachments/assets/68a6728b-558d-4dcb-ba69-8b6c8678adf2" />
 
 # Result :
 Thus, standard discrete-time signals were successfully generated and plotted using MATLAB.
